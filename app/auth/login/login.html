@@ -1,0 +1,25 @@
+<auth-menu></auth-menu>
+
+<div class="container">
+    <!--<form class="form-signin " role="form">-->
+        <h2 class="form-signin-heading">Авторизация</h2>
+        <p class="alert alert-info">Логин: admin</p>
+        <p class="alert alert-info">Пароль: admin</p>
+        <input  type="email"
+                class="form-control"
+                placeholder="Логин"
+                required=""
+                autofocus=""
+                autocomplete="off"
+                ng-model="user.username">
+        <input type="password"
+               class="form-control"
+               placeholder="Пароль"
+               required=""
+               autocomplete="off"
+               ng-model="user.password">
+        <button class="btn btn-lg btn-primary btn-block"
+                type="submit"
+                ng-click="$ctrl.login()">Войти</button>
+    <!--</form>-->
+</div>
