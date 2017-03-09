@@ -1,23 +1,26 @@
 <div>
     <div class="col-xs-10"><div class="col-xs-10">
-        <button class="btn btn-default" title="Удалить письмо" ng-click="$ctrl.delete($ctrl.letter);">
+        <button class="btn btn-default" title="Удалить письмо" ng-click="$ctrl.deleteEmail({item: $ctrl.email});">
             <span class="glyphicon glyphicon-trash"></span>
         </button>
     </div></div>
     <div class="col-xs-10">
-        <div class="col-xs-6 ng-binding">
-            От: &nbsp;melkart2@infsys.ru
-
+        <div class="col-xs-6">
+            <b>От:</b> {{$ctrl.email.from}}
         </div>
         <small>
-            <div class="col-xs-2 text-right ng-binding">08.02.2017 07:13:20</div>
-            <div class="col-xs-2 text-right ng-binding">28 дней назад</div>
+            <div class="col-xs-2 text-right">{{$ctrl.email.created}}</div>
+            <div class="col-xs-2 text-right">{{$ctrl.email.created | dateAgo}}</div>
         </small>
     </div>
     <div class="col-xs-10"><div class="col-xs-10">
-        Тема: &nbsp;<b class="ng-binding">Уведомление КПИ по подписке</b> &nbsp;&nbsp;&nbsp;
+        <b>Тема:</b> {{$ctrl.email.subject}}
     </div></div>
-    <div class="col-xs-10"><div class="col-xs-10 ng-binding">
-        Кому: &nbsp;l-kupr@mail.ru &nbsp;&nbsp;&nbsp;
+    <div class="col-xs-10"><div class="col-xs-10">
+        <b>Кому:</b> {{$ctrl.email.to}}
+    </div></div>
+
+    <div class="col-xs-10"><div class="col-xs-10">
+        <b>Текст письма:</b> {{$ctrl.email.body}}
     </div></div>
 </div>

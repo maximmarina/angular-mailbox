@@ -109,7 +109,8 @@ app.config(($stateProvider, $urlRouterProvider) => {
         url: '/:emailId',
         template: `<email-detail emails-data="$ctrl.emailsData"
                                  contacts-data="$ctrl.contactsData"
-                                 delete-email="$ctrl.deleteEmail(item)">
+                                 delete-email="$ctrl.deleteEmail(item)"
+                                 set-flag-read-email="$ctrl.setFlagReadEmail(item)">
                    </email-detail>`
     })
 

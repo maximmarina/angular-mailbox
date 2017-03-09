@@ -1,7 +1,8 @@
 'use strict';
-//gmailCtrl.$inject = ['$state'];
-class gmailCtrl {
-    constructor(){
+
+class GmailCtrl {
+    constructor($state){
+        this._$state = $state;
         console.log('Init gmailCtrl');
         this.searchMailbox = {};
         this.searchMailbox.value = "";
@@ -10,13 +11,12 @@ class gmailCtrl {
     $onInit(){
         console.log("Run $onInit for gmailCtrl!");
     }
-
-    $onChanges(){
-        console.log('gmailCtrl: $onChanges');
-    }
     
     deleteEmail(item){
         this.emailsData.splice( this.emailsData.indexOf(item), 1);
+        if(this._$state.current.name == "gmail.detail") {
+            this._$state.go('gmail.inbox');
+        }
     }
 
     deleteContact(item){
@@ -24,18 +24,23 @@ class gmailCtrl {
     }
 
     selectEmail(email){
-        console.log('selectEmail');
         console.log(email);
         let idEmail = email.id;
-        // $state.go('gmail.detail', {'emailId':idEmail});
+        this._$state.go('gmail.detail', {'emailId':idEmail});
+    }
+
+    setFlagReadEmail(email){        
+        // ставим флаг unread = false;
     }
 }
+
+GmailCtrl.$inject = ['$state'];
 
 export const gmailComponent = {
     bindings: {
         emailsData: '<',
-        contactsData: '<',
+        contactsData: '<'
     },
     templateUrl: "app/gmail/gmail.html",
-    controller: gmailCtrl
+    controller: GmailCtrl
 }
