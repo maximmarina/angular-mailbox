@@ -7,6 +7,7 @@ import {authMenuComponent}      from './auth/menu/authMenu';
 import {gmailComponent}         from './gmail/gmail.component';
 import {sideBarComponent}       from './gmail/sidebar/sidebar.component';
 import {mailboxComponent}       from './gmail/mailbox/mailbox.component';
+import {mailDetailComponent}    from './gmail/mailbox/detail/detail.component';
 import {contactComponent}       from './gmail/contact/contact.component';
 
 let app = angular.module('mailBox', ['ui.router', 'ngResource', 'ngCookies']);
@@ -99,7 +100,10 @@ app.config(($stateProvider, $urlRouterProvider) => {
     }).state({
         name: 'gmail.detail',
         url: '/:emailId',
-        template: '<email-detail emails-data="$ctrl.emailsData" contacts-data="$ctrl.contactsData"></email-detail>'
+        template: `<email-detail emails-data="$ctrl.emailsData"
+                                 contacts-data="$ctrl.contactsData"
+                                 delete-email="$ctrl.deleteEmail(item)">
+                   </email-detail>`
     })
 
     $urlRouterProvider.otherwise('/login');
@@ -110,8 +114,9 @@ app.component('registrate', registrateComponent);
 app.component('authMenu', authMenuComponent);
 
 app.component('gmail', gmailComponent);
-app.component('mailbox', mailboxComponent);
 app.component('sidebar', sideBarComponent);
+app.component('mailbox', mailboxComponent);
+app.component('emailDetail', mailDetailComponent);
 app.component('contact', contactComponent);
 
 
