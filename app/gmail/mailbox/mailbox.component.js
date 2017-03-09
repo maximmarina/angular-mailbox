@@ -14,8 +14,7 @@ export const mailboxComponent = {
         emailsData: '<',
         contactsData: '<',
         typeEmail: '<',
-        deleteEmail: '&',
-        deleteContact: '&'
+        deleteEmail: '&'
     },
     templateUrl: "app/gmail/mailbox/mailbox.html",
     controller: mailboxCtrl

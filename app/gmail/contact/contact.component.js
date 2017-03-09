@@ -5,13 +5,13 @@ class contactCtrl {
     };
     $onInit(){
         console.log("Run $onInit for contactCtrl!");
-        console.log(this.contactsData);
     };
 }
 
 export const contactComponent = {
     bindings: {
         contactsData: '<',
+        deleteContact: '&'
     },
     templateUrl: "app/gmail/contact/contact.html",
     controller: contactCtrl

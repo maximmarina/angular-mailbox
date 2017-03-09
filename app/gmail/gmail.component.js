@@ -12,8 +12,8 @@ class gmailCtrl {
         this.emailsData.splice( this.emailsData.indexOf(item), 1);
     }
 
-    deleteContact(){
-
+    deleteContact(item){
+        this.contactsData.splice( this.contactsData.indexOf(item), 1);
     }
 }
 

@@ -44,7 +44,9 @@ app.config(($stateProvider, $urlRouterProvider) => {
     }).state({
         name: 'gmail.contact',
         url: '/contact',
-        template: `<contact contacts-data="$ctrl.contactsData"></contact>`,
+        template: `<contact contacts-data="$ctrl.contactsData"
+                            delete-contact="$ctrl.deleteContact(item)">                    
+                   </contact>`,
     }).state({
         name: 'gmail.inbox',
         url: '/inbox',
