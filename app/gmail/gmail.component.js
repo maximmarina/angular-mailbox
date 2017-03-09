@@ -1,4 +1,5 @@
 'use strict';
+//gmailCtrl.$inject = ['$state'];
 class gmailCtrl {
     constructor(){
         console.log('Init gmailCtrl');
@@ -16,6 +17,13 @@ class gmailCtrl {
 
     deleteContact(item){
         this.contactsData.splice( this.contactsData.indexOf(item), 1);
+    }
+
+    selectEmail(email){
+        console.log('selectEmail');
+        console.log(email);
+        let idEmail = email.id;
+        // $state.go('gmail.detail', {'emailId':idEmail});
     }
 }
 

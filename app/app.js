@@ -10,6 +10,9 @@ import {mailboxComponent}       from './gmail/mailbox/mailbox.component';
 import {mailDetailComponent}    from './gmail/mailbox/detail/detail.component';
 import {contactComponent}       from './gmail/contact/contact.component';
 
+//Закоментировал, т.к. через експорт не получилось сделать.
+// import {EmailService}           from './gmail/gmail.mail.service';
+
 let app = angular.module('mailBox', ['ui.router', 'ngResource', 'ngCookies']);
 
 app.config(($stateProvider, $urlRouterProvider) => {
@@ -56,6 +59,7 @@ app.config(($stateProvider, $urlRouterProvider) => {
                             contacts-data="$ctrl.contactsData" 
                             type-email="typeEmail"
                             delete-email="$ctrl.deleteEmail(item)"
+                            select-email="$ctrl.selectEmail(item)"
                             search-mailbox="$ctrl.searchMailbox">
                    </mailbox>`,
         controller: function($scope) {
@@ -67,7 +71,8 @@ app.config(($stateProvider, $urlRouterProvider) => {
         template: `<mailbox emails-data="$ctrl.emailsData" 
                             contacts-data="$ctrl.contactsData" 
                             type-email="typeEmail"
-                            delete-email="$ctrl.deleteEmail(item)"
+                            delete-email="$ctrl.deleteEmail(item)"                            
+                            select-email="$ctrl.selectEmail(item)"
                             search-mailbox="$ctrl.searchMailbox">                            
                    </mailbox>`,
         controller: function($scope) {
@@ -80,6 +85,7 @@ app.config(($stateProvider, $urlRouterProvider) => {
                             contacts-data="$ctrl.contactsData" 
                             type-email="typeEmail"
                             delete-email="$ctrl.deleteEmail(item)"
+                            select-email="$ctrl.selectEmail(item)"
                             search-mailbox="$ctrl.searchMailbox">                            
                    </mailbox>`,
         controller: function($scope) {
@@ -92,6 +98,7 @@ app.config(($stateProvider, $urlRouterProvider) => {
                             contacts-data="$ctrl.contactsData" 
                             type-email="typeEmail"
                             delete-email="$ctrl.deleteEmail(item)"
+                            select-email="$ctrl.selectEmail(item)"
                             search-mailbox="$ctrl.searchMailbox">                            
                    </mailbox>`,
         controller: function($scope) {
@@ -119,6 +126,8 @@ app.component('mailbox', mailboxComponent);
 app.component('emailDetail', mailDetailComponent);
 app.component('contact', contactComponent);
 
+//Закоментировал, т.к. через експорт не получилось сделать.
+//app.service('EmailService', EmailService);
 
 app.service('EmailService', function ($http) {
     this.getAll = () => {

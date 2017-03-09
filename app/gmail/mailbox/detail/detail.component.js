@@ -7,7 +7,6 @@ class mailDetailCtrl {
     $onInit(){
         console.log("Run $onInit for mailDetail!");
     }
-
 }
 
 export const mailDetailComponent = {
