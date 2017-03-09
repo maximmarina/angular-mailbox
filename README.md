@@ -2,8 +2,8 @@
 
 <h2>Технологии</h2>
 
-Angular 1.6
-Инструмент сборки frontend: WebPack 2.2.1
+- Angular 1.6
+- Инструмент сборки frontend: WebPack 2.2.1
 
 <h2>Demo</h2>
 

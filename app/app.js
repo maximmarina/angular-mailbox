@@ -153,3 +153,22 @@ app.filter('emailByTypeFilter', function () {
         return filtered;
     };
 });
+
+app.filter('counterEmailFilter', function () {
+    return function (items, type) {
+        let count = 0;
+        for (var i = 0; i < items.length; i++) {
+            var item = items[i];
+            if (item.type == type){
+                if(item.type == 'draft'){
+                    count++;
+                } else {
+                    if(item.unread == true){
+                        count++;
+                    }
+                }
+            }
+        }
+        return count;
+    };
+});

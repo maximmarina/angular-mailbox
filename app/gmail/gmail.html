@@ -37,32 +37,32 @@
         </div><!-- menu -->
 
         <div class="controls col-sm-10">
-            <ul class="control-list list-inline">
-                <li>
-                    <button class="btn btn-control">
-                        <input type="checkbox" class="mail-select">
-                        <span class="caret"></span>
-                    </button>
-                </li>
-                <li>
-                    <button class="btn btn-control">
-                        <span class="glyphicon glyphicon-repeat"></span>
-                    </button>
-                </li>
+            <!--<ul class="control-list list-inline">-->
+                <!--<li>-->
+                    <!--<button class="btn btn-control">-->
+                        <!--<input type="checkbox" class="mail-select">-->
+                        <!--<span class="caret"></span>-->
+                    <!--</button>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<button class="btn btn-control">-->
+                        <!--<span class="glyphicon glyphicon-repeat"></span>-->
+                    <!--</button>-->
+                <!--</li>-->
 
-                <li>
-                    <button class="text-btn btn btn-control">
-                        <strong>Еще</strong>
-                        <span class="caret"></span>
-                    </button>
-                </li>
-            </ul>
+                <!--<li>-->
+                    <!--<button class="text-btn btn btn-control">-->
+                        <!--<strong>Еще</strong>-->
+                        <!--<span class="caret"></span>-->
+                    <!--</button>-->
+                <!--</li>-->
+            <!--</ul>-->
         </div><!-- controls -->
     </div><!-- control-bar -->
 
     <div class="mail row">
 
-        <sidebar></sidebar>
+        <sidebar emails-data="$ctrl.emailsData"></sidebar>
 
         <ui-view ></ui-view>
 

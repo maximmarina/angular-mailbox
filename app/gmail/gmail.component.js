@@ -10,6 +10,10 @@ class gmailCtrl {
     $onInit(){
         console.log("Run $onInit for gmailCtrl!");
     }
+
+    $onChanges(){
+        console.log('gmailCtrl: $onChanges');
+    }
     
     deleteEmail(item){
         this.emailsData.splice( this.emailsData.indexOf(item), 1);

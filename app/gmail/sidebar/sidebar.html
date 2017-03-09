@@ -9,19 +9,18 @@
         Контакты
     </button>
     </a>
-
     <ul class="inbox-sections list-unstyled">
         <li>
-            <a ui-sref="gmail.inbox" ui-sref-active="active">Входящие (100)</a>
+            <a ui-sref="gmail.inbox" ui-sref-active="active">Входящие ({{$ctrl.emailsData | counterEmailFilter:'inbox'}})</a>
         </li>
         <li>
             <a ui-sref="gmail.sent" ui-sref-active="active">Отправленные</a>
         </li>
         <li>
-            <a ui-sref="gmail.draft" ui-sref-active="active">Черновики (7)</a>
+            <a ui-sref="gmail.draft" ui-sref-active="active">Черновики ({{$ctrl.emailsData | counterEmailFilter:'draft'}})</a>
         </li>
         <li>
-            <a ui-sref="gmail.spam" ui-sref-active="active">Спам (1)</a>
+            <a ui-sref="gmail.spam" ui-sref-active="active">Спам ({{$ctrl.emailsData | counterEmailFilter:'spam'}})</a>
         </li>
     </ul>
 </div>
