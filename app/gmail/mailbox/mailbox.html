@@ -1,6 +1,5 @@
 <div class="inbox col-sm-10">
-    {{$ctrl.typeEmail}}
-    <ul class="list-unstyled" ng-repeat="email in $ctrl.emailsData | byTypeEmailFilter:$ctrl.typeEmail">
+    <ul class="list-unstyled" ng-repeat="email in $ctrl.emailsData | emailByTypeFilter:$ctrl.typeEmail">
         <li class="email-item row" ng-class="{true:'unread', false:''}[email.unread]">
             <div class="people col-sm-3">
                 <ul class="mail-icons list-inline">
@@ -17,7 +16,7 @@
                 </span>
             </div><!-- people -->
 
-            <div class="message col-sm-7">
+            <div class="message col-sm-6">
                 <div class="clipper">
                     <h3>{{email.subject}}</h3>
                     -
@@ -28,6 +27,11 @@
             <div class="date col-sm-2">
                 <date class="pull-right">{{email.created}}</date>
             </div><!-- date -->
+            <div class="people col-sm-1">
+                <button class="btn btn-xs btn-danger" ng-click="$ctrl.deleteEmail({item: email})">
+                    Удалить
+                </button>
+            </div>
         </li>
     </ul>
-</div><!-- inbox -->
+</div>

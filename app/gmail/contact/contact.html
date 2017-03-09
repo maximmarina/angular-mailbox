@@ -1,0 +1,31 @@
+<div class="inbox col-sm-10">
+    <ul class="list-unstyled" ng-repeat="contact in $ctrl.contactsData">
+        <li class="email-item row">
+            <div class="people col-sm-2">
+                <ul class="mail-icons list-inline">
+                    <li>
+                        <input type="checkbox" class="mail-select">
+                    </li>
+                </ul>
+
+                <span class="people-names">
+                  {{contact.email}}
+                </span>
+            </div>
+
+            <div class="message col-sm-4">
+                <div class="clipper">
+                    <h3>{{contact.name}}</h3>
+                    -
+                    <p>{{contact.phone}}</p>
+                </div>
+            </div>
+
+            <div class="people col-sm-1">
+                <button class="btn btn-xs btn-danger">
+                    Удалить
+                </button>
+            </div>
+        </li>
+    </ul>
+</div>
