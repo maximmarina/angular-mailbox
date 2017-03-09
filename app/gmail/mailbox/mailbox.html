@@ -27,7 +27,7 @@
             </div><!-- message -->
 
             <div class="date col-sm-2">
-                <date class="pull-right">{{email.created}}</date>
+                <date class="pull-right">{{email.created | dateAgo }}</date>
             </div><!-- date -->
             <div class="people col-sm-1">
                 <button class="btn btn-xs btn-danger" ng-click="$ctrl.deleteEmail({item: email})">
