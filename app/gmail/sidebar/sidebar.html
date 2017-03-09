@@ -2,19 +2,26 @@
     <button class="compose btn btn-danger">
         Написать
     </button>
+    </br>
+
+    <a ui-sref="gmail.contact">
+    <button class="compose btn btn-success">
+        Контакты
+    </button>
+    </a>
 
     <ul class="inbox-sections list-unstyled">
         <li class="active">
-            Входящие (100)
+            <a ui-sref="gmail.inbox" ui-sref-active="active">Входящие (100)</a>
         </li>
-        <li>Отправленные</li>
+        <li>
+            <a ui-sref="gmail.sent" ui-sref-active="active">Отправленные</a>
+        </li>
         <li class="pending">
-            Черновики (7)
+            <a ui-sref="gmail.draft" ui-sref-active="active">Черновики (7)</a>
         </li>
         <li class="pending">
-            Спам (1)
+            <a ui-sref="gmail.spam" ui-sref-active="active">Спам (1)</a>
         </li>
-        <li></li>
-        <li>Контакты</li>
     </ul>
 </div>
