@@ -1,5 +1,5 @@
 <div class="inbox col-sm-10">
-    <ul class="list-unstyled" ng-repeat="email in $ctrl.emailsData | emailByTypeFilter:$ctrl.typeEmail">
+    <ul class="list-unstyled" ng-repeat="email in $ctrl.emailsData | emailByTypeFilter:$ctrl.typeEmail | filter:$ctrl.searchMailbox.value">
         <li class="email-item row" ng-class="{true:'unread', false:''}[email.unread]">
             <div class="people col-sm-3">
                 <ul class="mail-icons list-inline">

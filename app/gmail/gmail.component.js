@@ -2,6 +2,8 @@
 class gmailCtrl {
     constructor(){
         console.log('Init gmailCtrl');
+        this.searchMailbox = {};
+        this.searchMailbox.value = "";
     }
     
     $onInit(){

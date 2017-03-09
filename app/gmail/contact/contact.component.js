@@ -11,6 +11,7 @@ class contactCtrl {
 export const contactComponent = {
     bindings: {
         contactsData: '<',
+        searchMailbox: '<',
         deleteContact: '&'
     },
     templateUrl: "app/gmail/contact/contact.html",

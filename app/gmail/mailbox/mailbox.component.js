@@ -7,6 +7,7 @@ class mailboxCtrl {
     $onInit(){
         console.log("Run $onInit for mailboxCtrl!");
     }
+
 }
 
 export const mailboxComponent = {
@@ -14,6 +15,7 @@ export const mailboxComponent = {
         emailsData: '<',
         contactsData: '<',
         typeEmail: '<',
+        searchMailbox: '<',
         deleteEmail: '&'
     },
     templateUrl: "app/gmail/mailbox/mailbox.html",

@@ -45,7 +45,8 @@ app.config(($stateProvider, $urlRouterProvider) => {
         name: 'gmail.contact',
         url: '/contact',
         template: `<contact contacts-data="$ctrl.contactsData"
-                            delete-contact="$ctrl.deleteContact(item)">                    
+                            delete-contact="$ctrl.deleteContact(item)"
+                            search-mailbox="$ctrl.searchMailbox">                   
                    </contact>`,
     }).state({
         name: 'gmail.inbox',
@@ -53,7 +54,8 @@ app.config(($stateProvider, $urlRouterProvider) => {
         template: `<mailbox emails-data="$ctrl.emailsData" 
                             contacts-data="$ctrl.contactsData" 
                             type-email="typeEmail"
-                            delete-email="$ctrl.deleteEmail(item)">                            
+                            delete-email="$ctrl.deleteEmail(item)"
+                            search-mailbox="$ctrl.searchMailbox">
                    </mailbox>`,
         controller: function($scope) {
             $scope.typeEmail = 'inbox';
@@ -64,7 +66,8 @@ app.config(($stateProvider, $urlRouterProvider) => {
         template: `<mailbox emails-data="$ctrl.emailsData" 
                             contacts-data="$ctrl.contactsData" 
                             type-email="typeEmail"
-                            delete-email="$ctrl.deleteEmail(item)">                            
+                            delete-email="$ctrl.deleteEmail(item)"
+                            search-mailbox="$ctrl.searchMailbox">                            
                    </mailbox>`,
         controller: function($scope) {
             $scope.typeEmail = 'sent';
@@ -75,7 +78,8 @@ app.config(($stateProvider, $urlRouterProvider) => {
         template: `<mailbox emails-data="$ctrl.emailsData" 
                             contacts-data="$ctrl.contactsData" 
                             type-email="typeEmail"
-                            delete-email="$ctrl.deleteEmail(item)">                            
+                            delete-email="$ctrl.deleteEmail(item)"
+                            search-mailbox="$ctrl.searchMailbox">                            
                    </mailbox>`,
         controller: function($scope) {
             $scope.typeEmail = 'draft';
@@ -86,7 +90,8 @@ app.config(($stateProvider, $urlRouterProvider) => {
         template: `<mailbox emails-data="$ctrl.emailsData" 
                             contacts-data="$ctrl.contactsData" 
                             type-email="typeEmail"
-                            delete-email="$ctrl.deleteEmail(item)">                            
+                            delete-email="$ctrl.deleteEmail(item)"
+                            search-mailbox="$ctrl.searchMailbox">                            
                    </mailbox>`,
         controller: function($scope) {
             $scope.typeEmail = 'spam';
